@@ -1,4 +1,4 @@
-console.log("Hello World!\n==========\n");
+console.log("Hello Higher Order Functions!\n==========\n");
 
 // Exercise 1 Section
 console.log("EXERCISE 1:\n==========\n");
@@ -46,25 +46,30 @@ let users = [
 ];
 
 //Exercise 3
+users.forEach(users => console.log(users.name));
+console.log("EXERCISE 3:\n==========\n");
 
-users.forEach((item) => {
-    console.log(item.name, item.age, item.score, item.isActive);
+  let newUser = users.map((user) => {
+    return { name: user.name, score: user.score};
+  });
 
-}
-)
+  console.log([newUser]);
 
+  console.log("EXERCISE 4:\n==========\n");
 
+  let activeUsers = users.filter((user) => user.isActive);
+  console.log(activeUsers);
 
-let nameScore = users.map((item) => {
-    return {
-        name: item.name, score: item.score
-    };
+  console.log("EXERCISE 5:\n==========\n");
 
+  users.sort((a, b) => b.score - a.score); 
+  console.log(users);
 
+ console.log("EXERCISE 6:\n==========\n");
 
-}
-)
-console.log(nameScore);
+let avgScore = users.reduce((sum, user) => sum + user.score, 0) / users.length;
+ console.log(avgScore);
+
 
 //Exercise 4
 
