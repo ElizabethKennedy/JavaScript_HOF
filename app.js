@@ -16,7 +16,7 @@ let plus15 = plus(15)
 
 console.log(plus15(10));
 
-//Exercise 2
+console.log("Exercise 2:\n===========\n");
 
 let users = [
     {
@@ -57,10 +57,28 @@ console.log("EXERCISE 3:\n==========\n");
 
   console.log("EXERCISE 4:\n==========\n");
 
+  function isActive(user) {
+
+    return user.isActive === true;
+  }
+  
+  let filteredUsers = users.filter(isActive);
+  
+  console.log(filteredUsers);
+
   let activeUsers = users.filter((user) => user.isActive);
   console.log(activeUsers);
 
   console.log("EXERCISE 5:\n==========\n");
+
+  function sortDesc(user1, user2) {
+    if (user1.score < user2.score) {
+      return 1
+    } else {
+      return -1
+    }
+  }
+
 
   users.sort((a, b) => b.score - a.score); 
   console.log(users);
@@ -69,11 +87,3 @@ console.log("EXERCISE 3:\n==========\n");
 
 let avgScore = users.reduce((sum, user) => sum + user.score, 0) / users.length;
  console.log(avgScore);
-
-
-//Exercise 4
-
-users.forEach((item) => {
-
-}
-)
